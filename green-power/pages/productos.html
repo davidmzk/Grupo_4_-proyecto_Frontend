@@ -59,9 +59,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Tipo de Producto</th>
+                                    <th scope="col">Modelo</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Proveedor</th>
                                     <th scope="col">Precio</th>
-                                    <th scope="col">Stock</th>
                                     <th scope="col">Imagen</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
@@ -69,9 +71,12 @@
                             <tbody>
                                 <tr class="" v-for="producto in productos">
                                     <td scope="row">{{producto.id}}</td>
-                                    <td>{{producto.nombre}}</td>
+                                    <td>{{producto.tipo_producto}}</td>
+                                    <td>{{producto.modelo}}</td>
+                                    <td>{{producto.descripcion}}</td>
+                                    <td>{{producto.proveedor}}</td>
                                     <td>{{producto.precio}}</td>
-                                    <td>{{producto.stock}}</td>
+                                    <td>{{producto.imagen}}</td>
                                     <td>
                                         <img width="60" :src="producto.imagen" :alt="producto.nombre">
                                     </td>
