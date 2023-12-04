@@ -1,14 +1,10 @@
+console.log(location.search) // lee los argumentos pasados a este formulario
+var id=location.search.substr(4)
+console.log(id)
 const { createApp } = Vue
     createApp({
         data() {
             return {
-                productos:[],
-                //url:'http://localhost:5000/productos',
-                // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
-                url:'http://https://despelet.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
-                error: false,
-                cargando: true,
-                /*atributos para el guardar los valores del formulario */
                 id:0,
                 // nombre:"",
                 // imagen:"",
@@ -20,33 +16,33 @@ const { createApp } = Vue
                 proveedor: "", 
                 precio: "",
                 imagen: "",
+                url:'http://https://despelet.pythonanywhere.com/productos'+id,
             }
         },
     methods: {
         fetchData(url) {
             fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    this.productos = data;
-                    this.cargando=false
-                })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.id=data.id
+                // this.nombre = data.nombre;
+                // this.imagen=data.imagen
+                // this.stock=data.stock
+                // this.precio=data.precio
+                this.tipo_producto = data.tipo_producto 
+                this.modelo = data.modelo
+                this.despcripcion = data.despcripcion
+                this.proveedor = data.proveedor
+                this.precio = data.precio
+                this.imagen = data.imagen
+            })
             .catch(err => {
                 console.error(err);
                 this.error=true
             })
         },
-        eliminar(producto) {
-            const url = this.url+'/' + producto;
-            var options = {
-                method: 'DELETE',
-            }
-            fetch(url, options)
-                .then(res => res.text()) // or res.json()
-                .then(res => {
-                    location.reload();
-                })
-        },
-        grabar(){
+        modificar() {
             let producto = {
                 // nombre:this.nombre,
                 // precio: this.precio,
@@ -60,19 +56,20 @@ const { createApp } = Vue
                 imagen: this.imagen
             }
             var options = {
-                body:JSON.stringify(producto),
-                method: 'POST',
+                body: JSON.stringify(producto),
+                method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 redirect: 'follow'
             }
             fetch(this.url, options)
                 .then(function () {
-                    alert("Registro grabado")
+                    alert("Registro modificado")
                     window.location.href = "../pages/productos.html";
                 })
                 .catch(err => {
                     console.error(err);
-                    alert("Error al Grabarr")})
+                    alert("Error al Modificar")
+                })
         }
     },
     created() {
