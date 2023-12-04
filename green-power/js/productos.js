@@ -5,29 +5,35 @@ const { createApp } = Vue
                 productos:[],
                 //url:'http://localhost:5000/productos',
                 // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
-                url:'http://mcerda.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
-                error:false,
-                cargando:true,
+                url:'http://https://despelet.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
+                error: false,
+                cargando: true,
                 /*atributos para el guardar los valores del formulario */
                 id:0,
-                nombre:"",
-                imagen:"",
-                stock:0,
-                precio:0,
+                // nombre:"",
+                // imagen:"",
+                // stock:0,
+                // precio:0,
+                tipo_producto: "",
+                modelo: "",
+                despcripcion: "",
+                proveedor: "", 
+                precio: "",
+                imagen: "", 
             }
         },
     methods: {
         fetchData(url) {
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                this.productos = data;
-                this.cargando=false
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    this.productos = data;
+                    this.cargando=false
+                })
+            .catch(err => {
+                console.error(err);
+                this.error=true
             })
-        .catch(err => {
-            console.error(err);
-            this.error=true
-        })
         },
         eliminar(producto) {
             const url = this.url+'/' + producto;
@@ -42,10 +48,16 @@ const { createApp } = Vue
         },
         grabar(){
             let producto = {
-                nombre:this.nombre,
+                // nombre:this.nombre,
+                // precio: this.precio,
+                // stock: this.stock,
+                // imagen:this.imagen
+                tipo_producto: this.tipo_producto,
+                modelo: this.modelo,
+                despcripcion: this.despcripcion,
+                proveedor: this.proveedor,
                 precio: this.precio,
-                stock: this.stock,
-                imagen:this.imagen
+                imagen: this.imagen
             }
             var options = {
                 body:JSON.stringify(producto),
