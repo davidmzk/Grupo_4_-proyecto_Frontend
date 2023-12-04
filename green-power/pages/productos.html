@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>productos-003</title>
+    <title>Productoss</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -40,7 +37,7 @@
     
     
     <main>
-        <div id="app" class="container">
+        <div id="app" class="container-a">
             <h1>Productos</h1>
             <br>
             <a class="btn btn-primary" href="producto_nuevo.html">Nuevo</a>
@@ -78,7 +75,7 @@
                                     <td>{{producto.precio}}</td>
                                     <td>{{producto.imagen}}</td>
                                     <td>
-                                        <img width="60" :src="producto.imagen" :alt="producto.nombre">
+                                        <img width="60" :src="producto.imagen" :alt="producto.modelo">
                                     </td>
                                     <td>
                                         <a class="btn btn-primary" :href="'producto_update.html?id='+ producto.id" >Editar</a>

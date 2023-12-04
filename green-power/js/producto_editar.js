@@ -16,7 +16,7 @@ const { createApp } = Vue
                 proveedor: "", 
                 precio: "",
                 imagen: "",
-                url:'http://https://despelet.pythonanywhere.com/productos'+id,
+                url:'https://despelet.pythonanywhere.com/productos'+id,
             }
         },
     methods: {
