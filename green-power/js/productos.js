@@ -28,7 +28,7 @@ const { createApp } = Vue
                     .then(response => response.json())
                     .then(data => {
                         this.productos = data;
-                        this.cargando=false
+                        this.cargando = false
                     })
                 .catch(err => {
                     console.error(err);
