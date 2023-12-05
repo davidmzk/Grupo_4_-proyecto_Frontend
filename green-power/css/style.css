@@ -554,3 +554,35 @@ h3.tituloNot{
   }
 
  } 
+
+ .container-a {
+    
+    color: black;
+ }
+ 
+ .btn {
+  color: black;
+  /* font-style: italic; */
+  font-size: large;
+  padding: 5px;
+ }
+
+ .btn-danger { 
+  color: red;
+ }
+ 
+ td {
+  background-color: beige;
+  border-radius: 5px;
+  padding: 0px 15px;
+  /* margin: 5px; */
+  text-align: center;
+ }
+
+ th {
+  font-size: large;
+ }
+
+ .prod {
+  color:#035303
+ }
