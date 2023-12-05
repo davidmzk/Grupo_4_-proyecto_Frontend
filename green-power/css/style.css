@@ -554,3 +554,13 @@ h3.tituloNot{
   }
 
  } 
+
+ .container-a {
+    background-color: aliceblue;
+    color: black;
+ }
+ 
+ .btn {
+  color: black;
+  font-style: italic;
+ }

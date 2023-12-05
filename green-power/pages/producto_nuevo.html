@@ -37,21 +37,33 @@
     <script src="../scripts/script.js"></script>
 
     <main>
-        <div class="container" id="app">
-            <form style="background-color: aliceblue;">
-                <h1>Alta de Producto</h1>
+        <div class="container-a" id="app">
+            <form style="background-color: aliceblue; margin:10px auto ; width: 400px; padding: 20px;">
+                <h2>Alta de Producto </h2>
+                <!-- <p>Precio:{{precio}}</p> -->
                 <div class="mb-3">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" v-model="nombre">
+                   <input type="number" name="id" id="id" disabled v-model="id" >
+                     <label for="id">Id</label>
                 </div>
                 <div class="mb-3">
-                    <label for="precio">Precio</label>
+                    <label for="tipo_producto">Tipo de producto</label>
+                    <input type="text" name="tipo_producto" id="tipo_producto" v-model="tipo_producto">
+                </div>
+                <div class="mb-3">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" name="modelo" id="modelo" v-model="modelo">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" name="descripcion" id="descripcion" v-model="descripcion">
+                </div>
+                <div class="mb-3">
+                    <label for="proveedor">Proveedor</label>
+                    <input type="text" name="proveedor" id="proveedor" v-model="proveedor">
+                </div>
+                <div class="mb-3">
+                    <label for="precio">precio</label>
                     <input type="number" name="precio" id="precio" v-model="precio">
-                </div>
-
-                <div class="mb-3">
-                    <label for="stock">Stock</label>
-                    <input type="number" name="stock" id="stock" v-model="stock">
                 </div>
                 <div class="mb-3">
                     <label for="imagen">Imagen</label>
